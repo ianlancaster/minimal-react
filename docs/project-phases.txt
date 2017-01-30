@@ -1,0 +1,54 @@
+PHASES:
+
+  🌑  🌒  🌓  🌔  🌝
+
+  Phase 0: Project Preparation
+    🌓 Determine Phases and add to GitHub
+    🌓 Create MVP prototype
+    🌑 Create better read-me
+    🌑 Make project structure determinations
+    🌑 Get CORS Express Server Working
+
+  Phase 1: MVP
+    🌑 Implement top and bottom app navigation. Only add bills in main nav
+    🌑 Display a list of bill preview components (cards) that show name
+    🌑 Bill identifier
+    🌑 Bill introduction date
+    🌑 Last activity date
+    🌑 Bill status indicator
+    🌑 Categorize bills and add tags
+
+  Phase 2: Sorting and filtering
+    🌑 Sort by closest to becoming law
+    🌑 Sort by date introduced
+    🌑 Sort by last activity
+    🌑 Filter by tag
+    🌑 Search
+
+  Phase 3: Bill Detail
+    🌑 Display bill id
+    🌑 Display bill title
+    🌑 Display bill tags
+    🌑 Display bill proposed date
+    🌑 Display bill sponsors
+    🌑 Display bill last action
+    🌑 Display bill summary
+
+  Phase 4: Getting Gritty
+    🌑 Display bill progress on bill detail screen
+    🌑 Show bill progress bar on bill summary card
+    🌑 Add view full bill link
+
+  Phase 5: Authentication
+    🌑 Build out login screen
+    🌑 Allow user to login with facebook
+    🌑 Create voting address verification screen
+    🌑 Create interest / category screen
+    🌑 Create my account screen
+
+  Phase 6: Make it useful
+    🌑 Make bills default to interests sorted by closest to becoming law
+    🌑 Add follow bell to bill card and bill detail
+    🌑 Add followed option to bill filtering
+    🌑 Add take action button and functionality
+    🌑 Add notification center for followed bills

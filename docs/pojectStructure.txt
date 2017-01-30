@@ -1,0 +1,44 @@
+✅ = snippet(s) created
+☝️ = snippet pending
+
+.
+├── bin                                 # Directory |    | Build/Start scripts
+├── config                              # Directory |    | Project and build configurations
+├── docs                                # Directory |    | Project documentation and resources
+├── local                               # Directory |    | Project research and design files
+├── public                              # Directory |    | Static public assets (not imported anywhere in source code)
+├── server                              # Directory |    | Express application that provides webpack middleware
+│   └── main.js                         # File      | ✅ | Server application entry point
+│   └── routes                          # Directory |    | Holds modular express routes
+│       └── routeName.js                # File      | ✅ | Individual modular express route
+├── src                                 # Directory |    | Application source code
+│   ├── index.html                      # File      |    | Main HTML page container for app
+│   ├── main.js                         # File      |    | Application bootstrap and rendering
+│   ├── test-bundler.js                 # File      |    | Testing entry point
+│   ├── globals                         # Directory |    | Global Reusable Containers and Components
+│   │   └── Component                   # Directory |    | Contains componenet resources
+│   │       └── assets                  # Directory |    | Assets needed to render component
+│   │       └── Component.component.js  # File      | ✅ | React component (smart or dumb)
+│   │       └── Component.styles.scss   # File      | ☝️ | Styles specific to component
+│   │       └── Component.container.js  # File      | ✅ | Component redux container
+│   │       └── Component.module.js     # File      | ✅ | Redux Actions and Reducers
+│   │       └── Component.spec.js       # File      | ☝️ | Component test file
+│   │       └── index.js                # File      | ✅ | Component entry point. Routs to either component or container
+│   ├── routes                          # Directory |    | Holds modular react routes
+│   │   ├── index.js                    # File      | ✅ | React router entry point
+│   │   └── Route                       # Directory |    | Holds router component resources
+│   │       └── assets                  # Directory |    | Assets needed to render component
+│   │       └── Route.component.js      # File      | ✅ | React component (smart or dumb)
+│   │       └── Route.styles.scss       # File      | ☝️ | Styles specific to component
+│   │       └── Route.container.js      # File      | ✅ | Component redux container
+│   │       └── Route.module.js         # File      | ✅ | Redux Actions and Reducers
+│   │       └── Route.spec.js           # File      | ☝️ | Component test file
+│   │       └── index.js                # File      | ✅ | Modular react route
+│   │       └── routes                  # Directory |    | Optional fractal routes
+│   ├── store                           # Directory |    | Redux-specific pieces
+│   │   ├── createStore.js              # File      |    | Create and instrument redux store
+│   │   └── reducers.js                 # File      |    | Reducer registry and injection
+│   └── styles                          # Directory |    | Application-wide styles (generally settings)
+│       ├── _base.scss                  # File      |    | Entrypoint for modules and partials
+│       └── core.scss                   # File      |    | Sass entrypoint with normalizer some css best practices
+└── templates                           # Directory |    | NERP Snippet Templates

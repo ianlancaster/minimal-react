@@ -1,0 +1,88 @@
+NOTES:
+  the application should allow as many features as possible without log-in
+  most bills die in committee because they never make it onto the agenda. This may not result in a change in status of the bill and thus trigger no notification. A timeout could be used to address this
+  there are various 'social' design choices that can be made to improve the quality of the app. For instance, I may only allow a user to express their support of a bill from the bill details screen, perhaps even at the bottom of this screen. This ensures that the user has atleast scrolled over the bill summary content, and have had a chance to see comments and news before expressing their opinion. Hopfully this design will encourage more informed decisions
+
+
+USE CASES:
+  My Congress Use Case: Logging in (first time)
+    user visits homepage
+    user watches video
+    user clicks on login w/ Facebook
+    ßapplication guides user through Facebook SSO
+    application transitions to on-boarding story
+
+  My Congress Use Case: on-boarding
+    application populates users address from FB and asks user to verify voting address
+      based on the currently input voting address, the application will show the users three congressional representatives
+    user clicks to confirm the address
+    application transitions to categories selection. This screen shows a grid of bill/issue categories that the user can click on to indicate interest. There is an option to skip this step
+    user chooses categories they are interested in and hits submit
+    application transitions to bills page
+
+  My Congress Use Case: Viewing and actions upon bills
+    bills screen defaults to filter based on interests (on-boarding categories) and a sort order of closest to becoming law
+    user scrolls down to view bills. Top and bottom navigation hides on scroll down and shows on scroll up to maximize space for content
+    user sees a bill they are interested in and clicks to see more detail
+    user reads summary of bill, user reads most helpful comments about a bill,
+    user clicks in support of bill
+    application updates to indicate the new vote
+    user clicks to follow the bill
+    the bill is tabled at committee. A notification is pushed out to user about change in status
+
+
+COMPONENTS:
+  Bills List
+    allow user to filter bills based on:
+      ✅ category
+      chamber
+      stage/progress
+      ✅ interested (on-boarding categories (front page))
+      committee
+      sponsor
+      party
+      popularity
+      followed
+
+    allow user to sort bills by:
+      ✅ popularity
+      ✅ and stage/progress
+
+  Bill Summary:
+    ✅ display the name and bill id
+    ✅ display a brief text summary of the bill
+    ✅ display a status bar for how close the bill is to becoming law
+    ✅ display an indicator of the bills current popularity using the four part system
+    ✅ allow user to follow the bill (receive notifications on bill progress or death)
+    ✅ allow user to click and view bill detail component
+    ✅ bill status
+
+  Bill Detail:
+    ✅ display all info listed in bill summary
+    ✅ show bill detailed summary
+    ✅ link to full bill text
+    ✅ link to comments about the bill (possibly add amazon like most helpful critical / most helpful supportive)
+    ✅ link to news about the bill
+    ✅ show detailed stage?
+    ✅ allow user to vote on the bill (indicate their opinion of the bill overall)
+    ✅ allow user to take action on the bill (this button identifies the next key gatekeepers to the bill and offers the user with a variety of ways to reach out to said gaitkeeper)
+    show how your representatives voted
+    show how/who killed the bill
+
+  Individual Representative:
+    ✅ nav - display contact info - message, social, email, phone
+    ✅ nav - display voting detail
+    show how rep voted in comparison to - you, district (HOR), state, party, public
+    ✅ nav - bio
+    ✅ approval rating
+    🔴 nav - positions stance on key issues
+    leadership and committee positions
+    attendance
+    party affiliation
+    congressional history
+    🔴 third party rankings
+
+  Representative Group
+
+  Voting Detail
+    display list of bills that rep could have voted on

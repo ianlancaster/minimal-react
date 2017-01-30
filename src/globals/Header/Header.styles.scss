@@ -1,0 +1,12 @@
+@import "../../styles/base";
+
+.header {
+  height: 20px;
+  background-color: $darkBlue;
+
+  p {
+    color: $white;
+    text-align: center;
+    padding-bottom: 2px;
+  }
+}
