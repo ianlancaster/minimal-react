@@ -1,4 +1,5 @@
-import Iphone from 'globals/Iphone'
+import CoreLayout from 'globals/CoreLayout'
+// replace CoreLayout with Iphone for a mobile rendering
 
 const __DEV__ = process.env.NODE_ENV === 'development'
 
@@ -9,7 +10,7 @@ export const createRoutes = (store) => {
     path: __DEV__
       ? '/'
       : '/searchinnovator.com/',
-    component: Iphone,
+    component: CoreLayout,
     indexRoute: { onEnter: (nextState, replace) => replace('bills') },
     getChildRoutes (location, next) {
       require.ensure([], (require) => {
