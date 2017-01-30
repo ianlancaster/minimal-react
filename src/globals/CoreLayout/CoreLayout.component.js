@@ -2,8 +2,10 @@ import React, { Component, PropTypes } from 'react'
 import Header from 'globals/Header'
 import classes from './CoreLayout.styles.scss'
 import MainNav from 'globals/MainNav'
+import EventEmmiter from 'wolfy87-eventemitter'
+export const ee = new EventEmmiter()
 
-class CoreLayout extends Component {
+export default class CoreLayout extends Component {
   constructor () {
     super()
     this.state = {
@@ -15,6 +17,7 @@ class CoreLayout extends Component {
   componentDidMount () {
     this.setContentViewportHeight()
     this.watchScrollActivity()
+    // ee.addListener('fetchAdditionalContent', () => console.log('ping'))
   }
   componentWillReceiveProps (nextProps) {
     if (!nextProps.billsFetching) {
@@ -59,8 +62,9 @@ class CoreLayout extends Component {
   }
   loadMoreContent (e) {
     const { scrollHeight, scrollTop, offsetHeight } = e.srcElement
-    if (scrollHeight - scrollTop < offsetHeight + 300 && !this.props.billsFetching) {
-      this.props.fetchAdditionalContent(true)
+    if (scrollHeight - scrollTop === offsetHeight) {
+      // this.props.fetchAdditionalContent(true)
+      ee.emitEvent('fetchAdditionalContent')
     }
   }
   render () {
@@ -84,4 +88,5 @@ CoreLayout.propTypes = {
   billsFetching: PropTypes.bool
 }
 
-module.exports = CoreLayout
+export { ee as onScrollEnd }
+// module.exports = CoreLayout

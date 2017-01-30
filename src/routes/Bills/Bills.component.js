@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react'
 import classes from './Bills.styles.scss'
 import Bill from 'globals/Bill'
+import { onScrollEnd } from 'globals/CoreLayout/CoreLayout.component'
+console.log('onScrollEnd', onScrollEnd)
 
 class Bills extends Component {
   constructor () {
@@ -12,6 +14,7 @@ class Bills extends Component {
   componentWillMount () {
     const { fetchBills } = this.props
     fetchBills()
+    onScrollEnd.addListener('fetchAdditionalContent', fetchBills)
   }
   componentWillReceiveProps (nextProps) {
     if (nextProps.appShouldFetchContent && nextProps.appShouldFetchContent !== this.props.appShouldFetchContent) {
