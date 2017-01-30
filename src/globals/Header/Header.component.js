@@ -3,9 +3,9 @@ import classes from './Header.styles.scss'
 
 const Header = () => {
   return (
-    <nav id={'header'} className={classes.header}>
+    <header id={'header'} className={classes.header}>
       <p>Bills</p>
-    </nav>
+    </header>
   )
 }
 

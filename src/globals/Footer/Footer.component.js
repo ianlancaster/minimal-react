@@ -10,14 +10,14 @@ import notificationsIcon from './assets/notification-icon.svg'
 
 const Footer = () => {
   return (
-    <nav id={'mainNav'} className={classes.mainNav}>
+    <footer id='footer' className={classes.footer}>
       <ul>
         <NavIconLink icon={billsIcon} label={'Bills'} route={'/bills'} />
         <NavIconLink icon={congressIcon} label={'Congress'} route={'/congress'} />
         <NavIconLink icon={notificationsIcon} label={'Notifications'} route={'/notifications'} />
         <NavIconLink icon={accountIcon} label={'Me'} route={'/account'} />
       </ul>
-    </nav>
+    </footer>
   )
 }
 

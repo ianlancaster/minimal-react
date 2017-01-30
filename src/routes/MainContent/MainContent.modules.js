@@ -15,31 +15,31 @@ const handleAction = (ACTION_TYPE, stateChanges) => {
   }
 }
 
-export const fetchBills = (pageNumber = 1) => {
+export const fetchMainContent = (pageNumber = 1) => {
   return (dispatch) => {
-    dispatch(requestBills())
-    return fetch(`http://localhost:3001/api/bills/${pageNumber}`)
+    dispatch(requestMainContent())
+    return fetch(`http://localhost:3001/api/mainContent/${pageNumber}`)
       .then(data => data.json())
-      .then(json => dispatch(receiveBills(json)))
+      .then(json => dispatch(receiveMainContent(json)))
       .catch(err => dispatch(reveiveErr(err)))
   }
 }
 
-export const requestBills = () => ({
-  type: 'REQUEST_BILLS'
+export const requestMainContent = () => ({
+  type: 'REQUEST_MAIN_CONTENT'
 })
 
-handleAction('REQUEST_BILLS', (state, action) => ({
+handleAction('REQUEST_MAIN_CONTENT', (state, action) => ({
   fetching: true
 }))
 
-export const receiveBills = (bills) => ({
-  type: 'RECEIVE_BILLS',
-  bills
+export const receiveMainContent = (mainContent) => ({
+  type: 'RECEIVE_MAIN_CONTENT',
+  mainContent
 })
 
-handleAction('RECEIVE_BILLS', (state, action) => ({
-  bills: [...state.bills, ...action.bills],
+handleAction('RECEIVE_MAIN_CONTENT', (state, action) => ({
+  mainContent: [...state.mainContent, ...action.mainContent],
   fetching: false
 }))
 
@@ -56,9 +56,9 @@ handleAction('RECEIVE_ERR', (state, action) => ({
 // ------------------------------------
 // Reducers
 // ------------------------------------
-const initialState = { bills: [] }
+const initialState = { mainContent: [] }
 
-export default function billsReducer (state = initialState, action) {
+export default function mainContentReducer (state = initialState, action) {
   const handler = ACTION_HANDLERS[action.type]
   return handler ? handler(state, action) : state
 }
