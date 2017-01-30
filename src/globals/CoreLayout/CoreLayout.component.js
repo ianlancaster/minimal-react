@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import Header from 'globals/Header'
 import classes from './CoreLayout.styles.scss'
-import MainNav from 'globals/MainNav'
+import Footer from 'globals/Footer'
 import EventEmmiter from 'wolfy87-eventemitter'
 export const ee = new EventEmmiter()
 
@@ -75,7 +75,7 @@ export default class CoreLayout extends Component {
         <main id={'main'} style={{ height: `${mainHeight}px`, mainPadding }}>
           {children}
         </main>
-        {showNav && (<MainNav />)}
+        {showNav && (<Footer />)}
       </div>
     )
   }

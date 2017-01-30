@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
-import classes from './MainNav.styles.scss'
+import classes from './Footer.styles.scss'
 import NavIconLink from 'globals/NavIconLink'
 
 import billsIcon from './assets/bills-icon.png'
@@ -8,7 +8,7 @@ import congressIcon from './assets/congress-icon.svg'
 import accountIcon from './assets/account-icon.svg'
 import notificationsIcon from './assets/notification-icon.svg'
 
-const MainNav = () => {
+const Footer = () => {
   return (
     <nav id={'mainNav'} className={classes.mainNav}>
       <ul>
@@ -21,4 +21,4 @@ const MainNav = () => {
   )
 }
 
-module.exports = MainNav
+module.exports = Footer
