@@ -33,34 +33,15 @@ handleAction('REQUEST_BILLS', (state, action) => ({
   fetching: true
 }))
 
-// ACTION_HANDLERS = {
-//   ...ACTION_HANDLERS,
-//   REQUEST_BILLS: (state) => ({
-//     ...state,
-//     fetching: true
-//   })
-// }
-
-export const receiveBills = (bills) => {
-  return {
-    type: 'RECEIVE_BILLS',
-    bills
-  }
-}
+export const receiveBills = (bills) => ({
+  type: 'RECEIVE_BILLS',
+  bills
+})
 
 handleAction('RECEIVE_BILLS', (state, action) => ({
   bills: [...state.bills, ...action.bills],
   fetching: false
 }))
-
-// ACTION_HANDLERS = {
-//   ...ACTION_HANDLERS,
-//   RECEIVE_BILLS: (state, action) => ({
-//     ...state,
-//     bills: [...state.bills, ...action.bills],
-//     fetching: false
-//   })
-// }
 
 export const reveiveErr = (err) => ({
   type: 'RECEIVE_ERR',
@@ -71,15 +52,6 @@ handleAction('RECEIVE_ERR', (state, action) => ({
   err: action.err,
   fetching: false
 }))
-
-// ACTION_HANDLERS = {
-//   ...ACTION_HANDLERS,
-//   RECEIVE_ERR: (state, action) => ({
-//     ...state,
-//     err: action.err,
-//     fetching: false
-//   })
-// }
 
 // ------------------------------------
 // Reducers
