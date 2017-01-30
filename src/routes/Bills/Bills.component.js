@@ -1,8 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import classes from './Bills.styles.scss'
 import Bill from 'globals/Bill'
-import { onScrollEnd } from 'globals/CoreLayout/CoreLayout.component'
-console.log('onScrollEnd', onScrollEnd)
+import { ee } from 'globals/CoreLayout/CoreLayout.component'
 
 class Bills extends Component {
   constructor () {
@@ -11,19 +10,21 @@ class Bills extends Component {
       nextPage: 2
     }
   }
+
   componentWillMount () {
     const { fetchBills } = this.props
+
     fetchBills()
-    onScrollEnd.addListener('fetchAdditionalContent', fetchBills)
+    ee.addListener('onScrollEnd',
+      () => this.setState({ nextpage: ++this.state.nextPage },
+        () => fetchBills(this.state.nextPage)
+      )
+    )
   }
-  componentWillReceiveProps (nextProps) {
-    if (nextProps.appShouldFetchContent && nextProps.appShouldFetchContent !== this.props.appShouldFetchContent) {
-      this.props.fetchBills(this.state.nextPage)
-      this.setState({ nextpage: ++this.state.nextPage })
-    }
-  }
+
   render () {
     const { bills } = this.props
+
     return (
       <div>
         <section id='bills-list'>
@@ -36,8 +37,7 @@ class Bills extends Component {
 
 Bills.propTypes = {
   fetchBills: PropTypes.func.isRequired,
-  bills: PropTypes.arrayOf(PropTypes.object).isRequired,
-  appShouldFetchContent: PropTypes.bool.isRequired
+  bills: PropTypes.arrayOf(PropTypes.object).isRequired
 }
 
 module.exports = Bills

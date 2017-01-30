@@ -14,22 +14,19 @@ export default class CoreLayout extends Component {
       showNav: true
     }
   }
+
   componentDidMount () {
     this.setContentViewportHeight()
     this.watchScrollActivity()
-    // ee.addListener('fetchAdditionalContent', () => console.log('ping'))
   }
-  componentWillReceiveProps (nextProps) {
-    if (!nextProps.billsFetching) {
-      this.props.fetchAdditionalContent(false)
-    }
-  }
+
   setContentViewportHeight () {
     const header = document.getElementById('header')
     const mainNav = document.getElementById('mainNav')
     const coreLayoutHeight = document.getElementById('coreLayout').offsetHeight
     const headerHeight = header ? header.offsetHeight : 0
     const mainNavHeight = mainNav ? mainNav.offsetHeight : 0
+
     this.setState({
       mainHeight: coreLayoutHeight - headerHeight - mainNavHeight,
       mainPadding: `${headerHeight}px 0 ${mainNavHeight}px 0`
@@ -39,34 +36,36 @@ export default class CoreLayout extends Component {
       this.setContentViewportHeight()
     }
   }
+
   watchScrollActivity () {
     const main = document.getElementById('main')
+
     main.onscroll = (e) => {
       this.loadMoreContent(e)
       this.hideNavigation(e)
       this.setContentViewportHeight()
     }
   }
+
   hideNavigation (e) {
-    if (this.state.scrollTop < e.srcElement.scrollTop) {
-      this.setState({ downScroll: ++this.state.downScroll })
-    } else {
-      this.setState({ downScroll: 0 })
-    }
-    if (this.state.downScroll > 25) {
-      this.setState({ showNav: false })
-    } else {
-      this.setState({ showNav: true })
-    }
+    this.state.scrollTop < e.srcElement.scrollTop
+      ? this.setState({ downScroll: ++this.state.downScroll })
+      : this.setState({ downScroll: 0 })
+
+    this.state.downScroll > 25
+      ? this.setState({ showNav: false })
+      : this.setState({ showNav: true })
+
     this.setState({ scrollTop: e.srcElement.scrollTop })
   }
+
   loadMoreContent (e) {
     const { scrollHeight, scrollTop, offsetHeight } = e.srcElement
     if (scrollHeight - scrollTop === offsetHeight) {
-      // this.props.fetchAdditionalContent(true)
-      ee.emitEvent('fetchAdditionalContent')
+      ee.emitEvent('onScrollEnd')
     }
   }
+
   render () {
     const { children } = this.props
     const { showNav, mainHeight, mainPadding } = this.state
@@ -83,10 +82,5 @@ export default class CoreLayout extends Component {
 }
 
 CoreLayout.propTypes = {
-  children: PropTypes.node,
-  fetchAdditionalContent: PropTypes.func.isRequired,
-  billsFetching: PropTypes.bool
+  children: PropTypes.node
 }
-
-export { ee as onScrollEnd }
-// module.exports = CoreLayout

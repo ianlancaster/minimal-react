@@ -8,8 +8,7 @@ const mapDispatchToProps = {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    bills: state.bills.bills,
-    appShouldFetchContent: state.coreLayout.appShouldFetchContent
+    bills: state.bills.bills
   }
 }
 
