@@ -209,6 +209,7 @@ webpackConfig.sassLoader = {
 }
 
 webpackConfig.postcss = [
+  require('lost'),
   cssnano({
     autoprefixer: {
       add: true,
