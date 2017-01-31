@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Heebo:400,500,700|Slabo+27px');
+@import url('https://fonts.googleapis.com/css?family=Heebo:400,500,700|Slabo+27px'); // sass-lint:disable-line no-url-domains, no-url-protocols
 
 @mixin base-header-styles {
   color: $dark-gray;
@@ -24,6 +24,8 @@ h3 {
 
 p {
   color: $dark-gray;
+  font-family: Slabo27px-Regular, serif;
+  font-size: 18px;
 }
 
 a {

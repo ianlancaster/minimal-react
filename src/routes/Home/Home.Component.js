@@ -1,18 +1,34 @@
-import React, { PropTypes } from 'react'
+import React, { Component, PropTypes } from 'react'
 import classes from './Home.styles.scss'
 
-const Home = ({ exampleProp1, exampleProp2 }) => {
-  return (
-    <div>
-      <h2> exampleProp1: {exampleProp1}</h2>
-      <h2> exampleProp2: {exampleProp2}</h2>
-    </div>
-  )
+class Home extends Component {
+  constructor () {
+    super()
+    this.state = {}
+  }
+
+  componentWillMount () {
+    const { fetchHomeContent } = this.props
+    fetchHomeContent()
+  }
+
+  render () {
+    const homeContent = this.props.homeContent[0]
+    const content = homeContent.content.rendered
+    const title = homeContent.title.rendered
+
+    return (
+      <div>
+        <h2>{title}</h2>
+        <section dangerouslySetInnerHTML={{ __html: content }} />
+      </div>
+    )
+  }
 }
 
 Home.propTypes = {
-  exampleProp1: PropTypes.number,
-  exampleProp2: PropTypes.number
+  homeContent: PropTypes.any,
+  fetchHomeContent: PropTypes.any
 }
 
 module.exports = Home
