@@ -3,8 +3,8 @@ import classes from './Header.styles.scss'
 
 const Header = () => {
   return (
-    <header id={'header'} className={classes.header}>
-      <p>Bills</p>
+    <header id='header' className={classes.header}>
+      <p>SearchInnovator.com</p>
     </header>
   )
 }

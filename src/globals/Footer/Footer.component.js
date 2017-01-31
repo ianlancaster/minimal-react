@@ -12,10 +12,10 @@ const Footer = () => {
   return (
     <footer id='footer' className={classes.footer}>
       <ul>
-        <NavIconLink icon={billsIcon} label={'Bills'} route={'/bills'} />
-        <NavIconLink icon={congressIcon} label={'Congress'} route={'/congress'} />
-        <NavIconLink icon={notificationsIcon} label={'Notifications'} route={'/notifications'} />
-        <NavIconLink icon={accountIcon} label={'Me'} route={'/account'} />
+        {/* <NavIconLink icon={billsIcon} label={'Bills'} route={'/bills'} /> */}
+        {/* <NavIconLink icon={congressIcon} label={'Congress'} route={'/congress'} /> */}
+        {/* <NavIconLink icon={notificationsIcon} label={'Notifications'} route={'/notifications'} /> */}
+        {/* <NavIconLink icon={accountIcon} label={'Me'} route={'/account'} /> */}
       </ul>
     </footer>
   )

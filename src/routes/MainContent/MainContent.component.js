@@ -13,11 +13,9 @@ class MainContent extends Component {
     const { mainContent } = this.props
 
     return (
-      <div>
-        <section id='mainContent-list'>
-          {mainContent && (mainContent.map((article, i) => <Article key={i} {...article} />))}
-        </section>
-      </div>
+      <section>
+        {mainContent && (mainContent.map((article, i) => <Article key={i} {...article} />))}
+      </section>
     )
   }
 }
