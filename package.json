@@ -1,7 +1,7 @@
 {
-  "name": "my-congress",
+  "name": "SearchInnovator",
   "version": "0.0.1",
-  "description": "Easily voice your political opinion to your representatives and keep them in check",
+  "description": "A repository for a react redux powered wordpress theme used for SearchInnovator.com, the personal website of SEO specialist and front-end engineer Ian Lancaster",
   "main": "index.js",
   "engines": {
     "node": ">=4.5.0",
