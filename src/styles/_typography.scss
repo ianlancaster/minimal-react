@@ -1,1 +1,31 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:300|Slabo+27px');
+@import url('https://fonts.googleapis.com/css?family=Heebo:400,500,700|Slabo+27px');
+
+@mixin base-header-styles {
+  color: $dark-gray;
+  font-family: 'Heebo', sans-serif;
+  font-size: 36px;
+  font-weight: 500;
+}
+
+h1 {
+  @include base-header-styles;
+  font-size: 36px;
+}
+
+h2 {
+  @include base-header-styles;
+  font-size: 24px;
+}
+
+h3 {
+  @include base-header-styles;
+  font-size: 20px;
+}
+
+p {
+  color: $dark-gray;
+}
+
+a {
+  color: $main-primary;
+}

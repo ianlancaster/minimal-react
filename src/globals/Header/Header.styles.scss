@@ -4,7 +4,7 @@
   @include material-shaddow-bottom;
 
   background-color: $light-gray;
-  height: 7rem;
+  height: $height-unit;
   position: fixed;
   width: 100%;
 }

@@ -4,7 +4,7 @@ import classes from './Header.styles.scss'
 const Header = () => {
   return (
     <header id='header' className={classes.header}>
-      <p>SearchInnovator.com</p>
+      <h1>SearchInnovator.com</h1>
     </header>
   )
 }
