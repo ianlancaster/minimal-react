@@ -2,7 +2,7 @@
 <html <?php language_attributes(); ?>>
 
 <head>
-  <title>We The People | Keeping Congress In Check</title>
+  <title>SearchInnovator | Front End Engineer & SEO Specialist Ian Lancaster</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <?php wp_head(); ?>
