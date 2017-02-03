@@ -13,9 +13,7 @@ class Home extends Component {
   }
 
   render () {
-    const homeContent = this.props.homeContent[0]
-    const content = homeContent.content.rendered
-    const title = homeContent.title.rendered
+    const { content, title } = this.props
 
     return (
       <div>
@@ -27,7 +25,8 @@ class Home extends Component {
 }
 
 Home.propTypes = {
-  homeContent: PropTypes.any,
+  content: PropTypes.any,
+  title: PropTypes.any,
   fetchHomeContent: PropTypes.any
 }
 

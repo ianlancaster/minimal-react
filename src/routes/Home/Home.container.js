@@ -7,7 +7,8 @@ const mapDispatchToProps = {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-  homeContent: state.home.homeContent
+  content: state.home.content,
+  title: state.home.title
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home)
