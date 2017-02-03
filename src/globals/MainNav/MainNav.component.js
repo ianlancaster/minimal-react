@@ -19,7 +19,9 @@ class MainNav extends Component {
     return (
       <nav className='main-navaigation'>
         <ul>
-          {navItems.map((navItem, i) => <NavLink data={navItem} key={i} />)}
+          {navItems && (navItems.map((navItem, i) => (
+            <NavLink data={navItem} key={i} />
+          )))}
         </ul>
       </nav>
     )
