@@ -1,0 +1,22 @@
+@import "../../styles/base";
+
+.mainNavLink {
+  padding-top: 10px;
+
+  :hover {
+    border-bottom: solid 2px $primary-blue;
+    color: $primary-blue;
+  }
+
+  a {
+    padding: 10px;
+    color: $dark-gray;
+    font-family: 'Heebo', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+
+    :hover {
+      color: $primary-blue;
+    }
+  }
+}

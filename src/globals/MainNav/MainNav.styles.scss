@@ -1,0 +1,13 @@
+.mainNav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  ul {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style-type: none;
+  }
+}

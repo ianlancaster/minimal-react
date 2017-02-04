@@ -17,7 +17,7 @@ class MainNav extends Component {
     const { navItems } = this.props
     console.log(navItems)
     return (
-      <nav className='main-navaigation'>
+      <nav className={classes.mainNav}>
         <ul>
           {navItems && (navItems.map((navItem, i) => (
             <NavLink data={navItem} key={i} />
