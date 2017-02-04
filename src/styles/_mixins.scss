@@ -16,7 +16,11 @@
 
 @mixin paralax {
 	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: 50% 50%;
+  background-position-y: inherit;
+	background-size: 100%;
 	background-attachment: fixed;
+
+	@include tablet {
+		background-size: cover;
+	}
 }
