@@ -1,0 +1,11 @@
+@import "../../styles/base";
+
+.homeBackground {
+  background-image: url('./assets/homeshot.jpg');
+  min-height: 600px;
+  @include paralax;
+
+  h2, h3, p {
+    color: $white;
+  }
+}

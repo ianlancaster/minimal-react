@@ -16,7 +16,7 @@ class Home extends Component {
     const { content, title } = this.props
 
     return (
-      <div>
+      <div className={classes.homeBackground}>
         <h2>{title}</h2>
         <section dangerouslySetInnerHTML={{ __html: content }} />
       </div>

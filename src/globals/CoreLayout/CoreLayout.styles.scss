@@ -9,15 +9,10 @@
     background-color: $white;
     min-height: 100vh;
     overflow-wrap: break-word;
-    overflow-y: auto;
-    padding-top: 80px;
+    padding-top: 75px;
 
     @include tablet {
       padding-top: 120px;
-    }
-
-    @include mobile {
-      padding-top: 0px;
     }
   }
 }
