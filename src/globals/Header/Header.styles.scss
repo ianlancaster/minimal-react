@@ -10,11 +10,31 @@
   display: flex;
   align-items: center;
   padding-left: 10px;
+
+  @include tablet {
+    flex-direction: column;
+    height: 120px;
+    padding: 0;
+  }
+
+  @include mobile {
+    position: relative;
+    justify-content: flex-end;
+    height: 100px;
+  }
 }
 
 .logo {
-  font-size: 48px;
+  font-size: 44px;
   padding-bottom: 4px;
+
+  @include tablet {
+    font-size: 40px;
+  }
+
+  @include mobile {
+    font-size: 32px;
+  }
 }
 
 .logoGrayHalf {
