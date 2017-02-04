@@ -12,7 +12,7 @@ class NavLink extends Component {
 
     return (
       <li className={classes.mainNavLink}>
-        <Link to={data.route}>
+        <Link to={data.route} activeClassName={classes.activeLink}>
           {data.label}
         </Link>
       </li>

@@ -18,5 +18,13 @@
     :hover {
       color: $primary-blue;
     }
+
+    @include mobile {
+      padding: 0;
+    }
   }
+}
+
+.activeLink {
+  border-bottom: solid 2px $primary-blue;
 }
