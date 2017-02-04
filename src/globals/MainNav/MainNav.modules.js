@@ -43,8 +43,7 @@ handleAction('RECEIVE_MAIN_NAV_CONTENT', (state, action) => {
     label: n.acf.label,
     route: n.acf.route,
     order: n.acf.order
-  })).sort((a, b) => a.order - b.order)
-  )
+  })).sort((a, b) => a.order - b.order))
 
   return {
     navItems,
