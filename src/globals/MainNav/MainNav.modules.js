@@ -39,10 +39,12 @@ export const receiveMainNavContent = (mainNav) => ({
 })
 
 handleAction('RECEIVE_MAIN_NAV_CONTENT', (state, action) => {
-  const navItems = action.mainNav.map(n => ({
+  const navItems = (action.mainNav.map(n => ({
     label: n.acf.label,
-    route: n.acf.route
-  }))
+    route: n.acf.route,
+    order: n.acf.order
+  })).sort((a, b) => a.order - b.order)
+  )
 
   return {
     navItems,

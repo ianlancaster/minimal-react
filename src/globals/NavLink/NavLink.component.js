@@ -9,7 +9,7 @@ class NavLink extends Component {
   }
   render () {
     const { data } = this.props
-    console.log(classes)
+
     return (
       <li className={classes.mainNavLink}>
         <Link to={data.route}>
