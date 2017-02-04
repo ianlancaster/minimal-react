@@ -14,12 +14,12 @@ class MainNav extends Component {
   }
 
   render () {
-    const { navItems } = this.props
-    console.log(navItems)
+    const { mainNavContent } = this.props
+    console.log(mainNavContent)
     return (
       <nav className={classes.mainNav}>
         <ul>
-          {navItems && (navItems.map((navItem, i) => (
+          {mainNavContent && (mainNavContent.map((navItem, i) => (
             <NavLink data={navItem} key={i} />
           )))}
         </ul>
@@ -29,7 +29,7 @@ class MainNav extends Component {
 }
 
 MainNav.propTypes = {
-  navItems: PropTypes.any,
+  mainNavContent: PropTypes.any,
   fetchMainNavContent: PropTypes.any
 }
 

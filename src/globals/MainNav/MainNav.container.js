@@ -7,7 +7,7 @@ const mapDispatchToProps = {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-  navItems: state.mainNav.navItems
+  mainNavContent: state.mainNav.mainNavContent
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainNav)

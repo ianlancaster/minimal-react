@@ -17,13 +17,28 @@ const handleAction = (ACTION_TYPE, stateChanges) => {
 
 export const fetchMainNavContent = () => {
   return (dispatch) => {
-    dispatch(requestMainNavContent())
+    if (localStorage.getItem('mainNavContent')) {
+      dispatch(renderCachedMainNavContent())
+    } else {
+      dispatch(requestMainNavContent())
+    }
+
     return fetch(`http://localhost/searchinnovator.com/wp-json/wp/v2/main_nav_link`)
       .then(data => data.json())
       .then(json => dispatch(receiveMainNavContent(json)))
       .catch(err => dispatch(reveiveErr(err)))
   }
 }
+
+export const renderCachedMainNavContent = () => ({
+  type: 'RENDER_CACHED_MAIN_NAV_CONTENT',
+  mainNavContent: JSON.parse(localStorage.getItem('mainNavContent'))
+})
+
+handleAction('RENDER_CACHED_MAIN_NAV_CONTENT', (state, action) => ({
+  fetching: true,
+  mainNavContent: action.mainNavContent
+}))
 
 export const requestMainNavContent = () => ({
   type: 'REQUEST_MAIN_NAV_CONTENT'
@@ -33,20 +48,22 @@ handleAction('REQUEST_MAIN_NAV_CONTENT', (state, action) => ({
   fetching: true
 }))
 
-export const receiveMainNavContent = (mainNav) => ({
+export const receiveMainNavContent = (mainNavContent) => ({
   type: 'RECEIVE_MAIN_NAV_CONTENT',
-  mainNav
+  mainNavContent
 })
 
 handleAction('RECEIVE_MAIN_NAV_CONTENT', (state, action) => {
-  const navItems = (action.mainNav.map(n => ({
+  const mainNavContent = (action.mainNavContent.map(n => ({
     label: n.acf.label,
     route: n.acf.route,
     order: n.acf.order
   })).sort((a, b) => a.order - b.order))
 
+  localStorage.setItem('mainNavContent', JSON.stringify(mainNavContent))
+
   return {
-    navItems,
+    mainNavContent,
     fetching: false
   }
 })
