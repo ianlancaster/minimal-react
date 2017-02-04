@@ -17,13 +17,27 @@ const handleAction = (ACTION_TYPE, stateChanges) => {
 
 export const fetchHomeContent = () => {
   return (dispatch) => {
-    dispatch(requestHomeContent())
+    if (localStorage.getItem('homeContent')) {
+      dispatch(renderCachedHomeContent())
+    } else {
+      dispatch(requestHomeContent())
+    }
+
     return fetch(`http://localhost/searchinnovator.com/wp-json/wp/v2/pages/?slug=Home`)
       .then(data => data.json())
       .then(json => dispatch(receiveHomeContent(json)))
       .catch(err => dispatch(reveiveErr(err)))
   }
 }
+
+export const renderCachedHomeContent = () => ({
+  type: 'RENDER_CACHED_HOME_CONTENT',
+  home: JSON.parse(localStorage.getItem('homeContent'))
+})
+
+handleAction('RENDER_CACHED_HOME_CONTENT', (state, action) => ({
+  ...action.home
+}))
 
 export const requestHomeContent = () => ({
   type: 'REQUEST_HOME_CONTENT'
@@ -38,11 +52,17 @@ export const receiveHomeContent = (home) => ({
   home
 })
 
-handleAction('RECEIVE_HOME_CONTENT', (state, action) => ({
-  content: (action.home[0]).content.rendered,
-  title: (action.home[0]).title.rendered,
-  fetching: false
-}))
+handleAction('RECEIVE_HOME_CONTENT', (state, action) => {
+  const homeContent = {
+    content: (action.home[0]).content.rendered,
+    title: (action.home[0]).title.rendered,
+    fetching: false
+  }
+
+  localStorage.setItem('homeContent', JSON.stringify(homeContent))
+
+  return { ...homeContent }
+})
 
 export const reveiveErr = (err) => ({
   type: 'RECEIVE_ERR',
