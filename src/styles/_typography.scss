@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Heebo:400,500,700|Slabo+27px'); // sass-lint:disable-line no-url-domains, no-url-protocols
+@import url('https://fonts.googleapis.com/css?family=Heebo:300,400,500,700|Slabo+27px'); // sass-lint:disable-line no-url-domains, no-url-protocols
+@import "mixins";
 
 @mixin base-header-styles {
   color: $dark-gray;
@@ -20,8 +21,9 @@ h2 {
 
 h3 {
   @include base-header-styles;
-  font-size: 20px;
-  font-weight: 400;
+  font-size: 22px;
+  font-weight: 300;
+  padding-bottom: 20px;
 }
 
 p {
@@ -29,6 +31,10 @@ p {
   font-family: Slabo27px-Regular, serif;
   font-size: 20px;
   text-align: justify;
+
+  @include mobile {
+    font-size: 18px;
+  }
 }
 
 a {

@@ -4,7 +4,7 @@
   @include paralax;
   background-image: url('./assets/homeshot4.jpg');
   background-position: 50% -150px;
-  min-height: 350px;
+  min-height:450px;
   display: flex;
   align-items: flex-end;
 
@@ -16,7 +16,7 @@
     background-position: 50% 0;
   }
 
-  h2, h3, p {
+  h2, p {
     color: $white;
     text-shadow: 1px 1px 2px #000000;
     font-weight: 300;
@@ -47,18 +47,25 @@
 
 .headShotImg {
   border-radius: 100%;
-  margin-bottom: -225px;
+  border: 4px solid $white;
   width: 100%;
-  padding-top: 20px;
+  margin-bottom: 10px;
 
   @include tablet {
-    margin: 0;
-    padding-bottom: 30px;
+    margin: 20px 0;
     width: 300px;
   }
 
   @include mobile {
     width: 250px;
+  }
+}
+
+.verticalOffset {
+  margin-bottom: -250px;
+
+  @include tablet {
+    margin: 0;
   }
 }
 
@@ -74,15 +81,21 @@
   }
 
   @include mobile {
-    padding: 10px;
+    padding: 20px 10px;
   }
 }
 
 .columnOneThird {
   lost-column: 1/3;
+  text-align: center;
 
   @include tablet {
     lost-column: none;
+    order: 1;
+
+    h3 {
+      color: $white;
+    }
   }
 }
 
@@ -91,5 +104,59 @@
 
   @include tablet {
     lost-column: none;
+  }
+}
+
+.socialLinks {
+  display: flex;
+  justify-content: space-around;
+  max-width: 300px;
+  margin: 0 auto;
+
+  a {
+    :hover {
+      background-repeat: no-repeat;
+      border: solid 2px rgba(0,0,0,0);
+    }
+  }
+}
+
+.twitterIcon, .linkedInIcon, .gitHubIcon, .emailIcon {
+  background-size: cover;
+  height: 50px;
+  width: 50px;
+  display: inline-block;
+  margin: auto;
+}
+
+.twitterIcon {
+  background-image: url('twitter.png');
+
+  @include tablet {
+    background-image: url('twitterWhite.png');
+  }
+}
+
+.linkedInIcon {
+  background-image: url('linkedin.png');
+
+  @include tablet {
+    background-image: url('linkedinWhite.png');
+  }
+}
+
+.gitHubIcon {
+  background-image: url('github.png');
+
+  @include tablet {
+    background-image: url('githubWhite.png');
+  }
+}
+
+.emailIcon {
+  background-image: url('mail.png');
+
+  @include tablet {
+    background-image: url('mailWhite.png');
   }
 }
