@@ -31,6 +31,7 @@ p {
   font-family: Slabo27px-Regular, serif;
   font-size: 20px;
   text-align: justify;
+  margin-bottom: 20px;
 
   @include mobile {
     font-size: 18px;
@@ -39,4 +40,5 @@ p {
 
 a {
   color: $main-primary;
+  text-decoration: none;
 }

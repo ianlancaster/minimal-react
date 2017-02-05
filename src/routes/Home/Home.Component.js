@@ -25,12 +25,13 @@ class Home extends Component {
             <div className={classes.columnOneThird}>
               <div className={classes.verticalOffset}>
                 <img src={headShotImg} className={classes.headShotImg} />
-                <h3>Get In Touch</h3>
+                <h3>Ian Lancaster | Front End Engineer & SEO Specialist</h3>
+                <h3><span className={classes.smallerize}>Get In Touch</span></h3>
                 <section className={classes.socialLinks}>
-                  <Link to='/'> <div className={classes.twitterIcon} /> </Link>
-                  <Link to='/'> <div className={classes.linkedInIcon} /> </Link>
-                  <Link to='/'> <div className={classes.gitHubIcon} /> </Link>
-                  <Link to='/'> <div className={classes.emailIcon} /> </Link>
+                  <a src='https://twitter.com/ianlancaster' rel='me' className={classes.twitterIcon} />
+                  <a src='https://www.linkedin.com/in/ianclancaster' rel='me' className={classes.linkedInIcon} />
+                  <a src='https://github.com/ianlancaster' rel='me' className={classes.gitHubIcon} />
+                  <a src='' className={classes.emailIcon} />
                 </section>
               </div>
             </div>

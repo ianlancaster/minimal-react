@@ -29,6 +29,7 @@
   h2 {
     font-size: 44px;
     padding-bottom: 30px;
+    font-family: Slabo27px-Regular, serif;
 
     @include tablet {
       font-size: 36px;
@@ -62,7 +63,7 @@
 }
 
 .verticalOffset {
-  margin-bottom: -250px;
+  margin-bottom: -300px;
 
   @include tablet {
     margin: 0;
@@ -97,6 +98,10 @@
       color: $white;
     }
   }
+}
+
+.smallerize {
+  font-size: 18px;
 }
 
 .columnTwoThirds {
