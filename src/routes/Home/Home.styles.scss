@@ -1,4 +1,4 @@
-@import "../../styles/base";
+@import '../../styles/base';
 
 .homeBackground {
   @include paralax;
@@ -117,21 +117,20 @@
   justify-content: space-around;
   max-width: 300px;
   margin: 0 auto;
-
-  a {
-    :hover {
-      background-repeat: no-repeat;
-      border: solid 2px rgba(0,0,0,0);
-    }
-  }
+  position: relative;
 }
 
-.twitterIcon, .linkedInIcon, .gitHubIcon, .emailIcon {
+.socialIcon {
   background-size: cover;
   height: 50px;
   width: 50px;
   display: inline-block;
   margin: auto;
+
+  :hover {
+    background-repeat: no-repeat;
+    border: solid 2px green;
+  }
 }
 
 .twitterIcon {
@@ -163,5 +162,14 @@
 
   @include tablet {
     background-image: url('mailWhite.png');
+  }
+}
+
+.emailCopy {
+  background-color: transparent;
+  border: none;
+
+  :focus {
+    outline: none;
   }
 }

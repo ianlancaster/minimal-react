@@ -1,8 +1,11 @@
 const headShotImg = require('./assets/Ian-Lancaster-Headshot.jpg')
+var ClipboardButton = require('react-clipboard.js')
+import ReactTooltip from 'react-tooltip'
 
 import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
-import classes from './Home.styles.scss'
+import c from './Home.styles.scss'
+import $ from 'jquery'
 
 class Home extends Component {
   constructor () {
@@ -20,22 +23,25 @@ class Home extends Component {
 
     return (
       <div>
-        <section className={classes.homeBackground}>
-          <div className={classes.mainContent}>
-            <div className={classes.columnOneThird}>
-              <div className={classes.verticalOffset}>
-                <img src={headShotImg} className={classes.headShotImg} />
+        <section className={c.homeBackground}>
+          <div className={c.mainContent}>
+            <div className={c.columnOneThird}>
+              <div className={c.verticalOffset}>
+                <img src={headShotImg} className={c.headShotImg} />
                 <h3>Ian Lancaster | Front End Engineer & SEO Specialist</h3>
-                <h3><span className={classes.smallerize}>Get In Touch</span></h3>
-                <section className={classes.socialLinks}>
-                  <a src='https://twitter.com/ianlancaster' rel='me' className={classes.twitterIcon} />
-                  <a src='https://www.linkedin.com/in/ianclancaster' rel='me' className={classes.linkedInIcon} />
-                  <a src='https://github.com/ianlancaster' rel='me' className={classes.gitHubIcon} />
-                  <a src='' className={classes.emailIcon} />
+                <h3><span className={c.smallerize}>Get In Touch</span></h3>
+                <section className={c.socialLinks}>
+                  <a href='https://twitter.com/ianlancaster' rel='me' className={`${c.twitterIcon} ${c.socialIcon}`} />
+                  <a href='https://www.linkedin.com/in/ianclancaster' rel='me' className={`${c.linkedInIcon} ${c.socialIcon}`} />
+                  <a href='https://github.com/ianlancaster' rel='me' className={`${c.gitHubIcon} ${c.socialIcon}`} />
+                  <ReactTooltip globalEventOff='click' delayHide={600} place='bottom' />
+                  <ClipboardButton data-tip='copied' data-event='click focus' className={c.emailCopy} data-clipboard-text='ianclancaster@gmail.com'>
+                    <a className={`${c.emailIcon} ${c.socialIcon}`} />
+                  </ClipboardButton>
                 </section>
               </div>
             </div>
-            <span className={classes.columnTwoThirds}>
+            <span className={c.columnTwoThirds}>
               <h2>Hello, My name is Ian.</h2>
               <p>
                 I am a front end software engineer and search engine optimization specialist.
@@ -43,9 +49,9 @@ class Home extends Component {
             </span>
           </div>
         </section>
-        <section className={classes.mainContent}>
-          <span className={classes.columnOneThird} />
-          <span className={classes.columnTwoThirds}>
+        <section className={c.mainContent}>
+          <span className={c.columnOneThird} />
+          <span className={c.columnTwoThirds}>
             <h3>A Little About Me</h3>
             <span dangerouslySetInnerHTML={{ __html: content }} />
           </span>

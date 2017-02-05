@@ -1,8 +1,5 @@
 import fetch from 'isomorphic-fetch'
 
-// ------------------------------------
-// Actions
-// ------------------------------------
 let ACTION_HANDLERS = {}
 
 const handleAction = (ACTION_TYPE, stateChanges) => {
@@ -15,12 +12,16 @@ const handleAction = (ACTION_TYPE, stateChanges) => {
   }
 }
 
+// ------------------------------------
+// Actions
+// ------------------------------------
+
 export const fetchHomeContent = () => {
   return (dispatch) => {
     if (localStorage.getItem('homeContent')) {
       dispatch(renderCachedHomeContent())
     } else {
-      dispatch(requestHomeContent())
+      dispatch(renderLoadingIndicator())
     }
 
     return fetch(`http://localhost/searchinnovator.com/wp-json/wp/v2/pages/?slug=Home`)
@@ -39,11 +40,11 @@ handleAction('RENDER_CACHED_HOME_CONTENT', (state, action) => ({
   ...action.home
 }))
 
-export const requestHomeContent = () => ({
-  type: 'REQUEST_HOME_CONTENT'
+export const renderLoadingIndicator = () => ({
+  type: 'RENDER_LOADING_INDICATOR'
 })
 
-handleAction('REQUEST_HOME_CONTENT', (state, action) => ({
+handleAction('RENDER_LOADING_INDICATOR', (state, action) => ({
   fetching: true
 }))
 
