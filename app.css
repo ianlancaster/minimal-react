@@ -715,7 +715,7 @@ a {
   background-position-y: inherit;
   background-size: 100%;
   background-attachment: fixed;
-  background-image: url(/e8d2d0a03f603b556ccea1b39ca3f8f3.jpg);
+  background-image: url(/minimal-react/e8d2d0a03f603b556ccea1b39ca3f8f3.jpg);
   background-position: 50% -150px;
   min-height: 450px;
   display: -ms-flexbox;
@@ -1049,6 +1049,10 @@ a {
   margin: 10px 5px;
   background-color: #fff;
   box-shadow: 0 2px 5px 0 rgba(0,0,0,.2);
+}
+
+.Resume-styles__iframe___2bkvc {
+  margin-top: -50px;
 }
 
 .Blog-styles__flexCenter___BPPNE {
