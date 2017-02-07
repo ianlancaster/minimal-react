@@ -19,10 +19,6 @@
       color: $primary-blue;
     }
 
-    :focus {
-      text-decoration: none;
-    }
-
     @include mobile {
       padding: 0;
     }
@@ -31,4 +27,8 @@
 
 .activeLink {
   border-bottom: solid 2px $primary-blue;
+
+  :focus {
+    text-decoration: none;
+  }
 }

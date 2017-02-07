@@ -15,7 +15,8 @@ export const createRoutes = (store) => {
       require.ensure([], (require) => {
         next(null, [
           require('./MainContent').default(store),
-          require('./Resume').default
+          require('./Resume').default,
+          require('./Blog').default
         ])
       })
     }
