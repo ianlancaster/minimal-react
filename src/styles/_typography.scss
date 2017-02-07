@@ -41,4 +41,8 @@ p {
 a {
   color: $main-primary;
   text-decoration: none;
+
+  :focus {
+    text-decoration: none;
+  }
 }

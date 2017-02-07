@@ -1,10 +1,13 @@
 import React, { PropTypes } from 'react'
-// import classes from './Resume.styles.scss'
+import classes from './Resume.styles.scss'
 
 const Resume = () => {
   return (
     <div>
-      <h1>Render</h1>
+      <iframe src='Ian-Lancaster-Resume-2017.pdf'
+        width='100%'
+        height='1100'
+        seamless />
     </div>
   )
 }

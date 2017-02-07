@@ -9,12 +9,20 @@ class NavLink extends Component {
   }
   render () {
     const { data } = this.props
+    let isExternal = false
+
+    if (data.route && data.route.slice(0, 4) === 'http') {
+      isExternal = true
+    }
 
     return (
       <li className={classes.mainNavLink}>
-        <Link to={data.route} activeClassName={classes.activeLink}>
-          {data.label}
-        </Link>
+        { isExternal ? <a href={data.route}>{data.label}</a>
+                     : <Link to={data.route}
+                        onlyActiveOnIndex
+                        activeClassName={classes.activeLink}>
+                        {data.label}
+                       </Link> }
       </li>
     )
   }
