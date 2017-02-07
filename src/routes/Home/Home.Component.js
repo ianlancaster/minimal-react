@@ -5,7 +5,6 @@ import ReactTooltip from 'react-tooltip'
 import React, { Component, PropTypes } from 'react'
 import { Link } from 'react-router'
 import c from './Home.styles.scss'
-import $ from 'jquery'
 
 class Home extends Component {
   constructor () {
