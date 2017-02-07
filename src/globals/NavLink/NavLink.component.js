@@ -14,7 +14,7 @@ class NavLink extends Component {
     if (data.route && data.route.slice(0, 4) === 'http') {
       isExternal = true
     }
-
+    /* eslint-disable */
     return (
       <li className={classes.mainNavLink}>
         { isExternal ? <a href={data.route}>{data.label}</a>
