@@ -14,7 +14,8 @@ export const createRoutes = (store) => {
     getChildRoutes (location, next) {
       require.ensure([], (require) => {
         next(null, [
-          require('./MainContent').default(store)
+          require('./MainContent').default(store),
+          require('./Resume').default
         ])
       })
     }
